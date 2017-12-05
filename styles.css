@@ -1,0 +1,164 @@
+.main-container {
+	margin: 0 auto;
+	width: 25%;
+	position: relative;
+	
+}
+
+.main-container.arrange {
+	width: calc(75% + 1px);
+}
+
+.main-container.arrange .note {
+	width: calc(33.3% - 10px);
+}
+
+.main-container.empty .placeholder {
+	opacity: 1;
+	z-index: 1000;
+}
+
+.main-container.empty .toolbar {
+	display: none;
+}
+
+.note {
+	background-color: #FFFACD;
+	width: 100%;
+	height: 300px;
+	box-shadow: inset 0 0 10px -4px #777;
+	position: absolute;
+	transition: left .5s, top .5s, opacity .5s;
+}
+
+.note.hide {
+	opacity: 0;
+}
+
+.note textarea {
+	width: 95%;
+	height: 95%;
+	border: none;
+	background-color: transparent;
+	margin: 2.5%;
+	font-size: 1.1em;
+	resize: none;
+}
+
+.note textarea:focus {
+	border: none;
+	outline: none;
+}
+
+.toolbar {
+	position: absolute;
+	opacity: 0;
+	background-color: #eee;
+	box-shadow: inset 0 0 10px -4px #777;
+	width: 30px;
+	top: 0;
+	left: -30px;
+	border: 1px solid #ccc;
+	border-right: none;
+	transition: opacity .2s ease-in;
+}
+
+.toolbar ul {
+	width: 30px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.toolbar ul li {
+	width: 30px;
+	padding: 6px 0 6px 0;
+	transition: background-color .15s linear;
+}
+
+.toolbar ul li:hover {
+	color: #fff;
+	cursor: pointer;
+}
+
+#note-approve:hover {
+	background-color: #228B22;
+}
+
+#note-remove:hover {
+	background-color: #B22222;
+}
+
+.toolbar .fa {
+	cursor: pointer;
+	font-size: 1.3em;
+}
+
+.toolbar.active {
+	opacity: 1;
+}
+
+.notes-toolbar {
+	position: fixed;
+	bottom: 0;
+	right: 10px;
+}
+
+.notes-toolbar ul {
+	list-style-type: none;
+}
+
+.notes-toolbar ul li {
+	display: inline-block;
+	width: 70px;
+	height: 70px;
+	border-radius: 70px;
+	text-align:center;
+	background-color: #333;
+	color: #fff;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+.notes-toolbar ul li .fa {
+	line-height: 70px;
+	font-size: 1.3em;
+}
+
+.notes-toolbar ul li.blue {
+	background-color: #6495ED;
+}
+
+#note-show.active .fa::before {
+	content: '\f00d';
+}
+
+.placeholder {
+	font-size: 1.4em;
+	text-align: center;
+	width: 90%;
+	z-index: -1000;
+	position: absolute;
+	padding: 5%;
+	color: #999;
+	background-color: #eee;
+	cursor: pointer;
+	margin-top: 10px;
+	transition: all .3s;
+	opacity: 0;
+}
+
+.placeholder:hover {
+	box-shadow: 0 3px 15px -1px #777;
+	margin-top: 0;
+}
+
+.placeholder-text {
+	margin: 10px 0 0 0;
+}
+
+.placeholder .fa {
+	font-size: 2em;
+	margin-top: 15px;
+}
